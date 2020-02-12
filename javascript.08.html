@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 8일차</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var text = "[한글자씩 출력]";
+        for (var i = 0; i < text.length; i++) {
+            console.log(text[i]);
+        }
+
+        var result = 0;
+        for (var i = 0; i <= 10; i++) {
+            result = result + i;
+            console.log(result);
+        }
+
+        var text = "";
+        for (var i = 0; i < 5; i++) {
+            text = text + "^" ;
+            console.log(text);
+        }
+
+        console.log("--------------------");
+
+        for (var i = 5; i > 0; i--) {
+            text = text.substr(0,i)
+            console.log(text);
+        }
+
+        console.log("--------------------");
+
+        for (var i = 9; i > 1; i--) {
+            for ( var j = 1; j < 10; j++)
+            console.log(i * j);
+        }
+
+        
+
+        console.log("--------------------"); 
+
+        // for (var i = 5; i >= 0; i--) {
+        //     console.log(i);
+        //     if (i == 0) {
+        //         for(var j = 1; j <= 5; j++)
+        //             console.log(j);
+        //     }
+        // }
+
+        for (var i = 0; i <= 5; i++) {
+            console.log(i);
+            if (i == 5) {
+                for (var j = 4; j >= 0; j--)
+                    console.log(j);
+            }
+        }
+
+        console.log("--------------------"); 
+
+        var text = ["배열","하나의 ","변수명으로 ","여러개의 ", "데이터를 ", "저장하는 ", "자료구조"]
+        console.log(text[0]);
+        console.log(text[1]);
+        console.log(text[2]);
+        console.log(text[3]);
+        console.log(text[4]);
+        console.log(text[5]);
+        console.log(text[6]);
+
+        console.log("--------------------"); 
+
+        text[0] = "하나에";
+        text[1] = "소녀들의";
+        text[2] = "릴케";
+        text[3] = "새워";
+        text[4] = "써";
+        text[5] = "어미니";
+        text[6] = "까닭입니다.";
+        console.log(text[0]);
+        console.log(text[1]);
+        console.log(text[2]);
+        console.log(text[3]);
+        console.log(text[4]);
+        console.log(text[5]);
+        console.log(text[6]);
+
+        console.log("--------------------"); 
+
+        for(var i = 0; i < text.length; i++ ) {
+            console.log(text[i]);
+        }
+
+        var array = []; // 빈 배열 선언
+        var ar1 = [1,2,3,4,5];
+        var ar2 = [6,7];
+        var ar3 = [11,12,13];
+        var ar4 = [16,17,18,19,20,21,22,23,24,25];
+
+        console.log(array);
+        array[0] = ar1;
+        console.log(array);
+        array[1] = ar2;
+        array.push(ar3);
+        array.unshift(ar4);
+        console.log(array);
+
+        for (var i = 0; i < array.length; i++) {
+            console.log("배열 array의 " + i + "번 index의 배열 길이 : " + array[i].length);
+        }
+
+        // 배열 array의 모든 요소에 접근하기
+
+        for (var i = 0; i < array.length; i++) {
+            for (var j = 0; j < array[i].length; j++) {
+                console.log("배열 array[" + i + "][" + j + "]의 값 : " + array[i][j]);
+            }
+        }
+
+        // for (var i = 0; i < array.length; i++) {
+        //     console.log("배열 array[" + i + "] 의 값 : " + array[i]);
+        // }
+
+        $(document).ready(function() {
+            var stars = [
+                ["1","아이유", "가수", "여성"],
+                ["2","폴킴", "가수", "남성"],
+                ["3","다비치", "가수", "여성"],
+                ["4","박효신", "가수", "남성"],
+                ["5","bts", "가수", "남성"],
+            ];
+
+            var tt = "";
+
+            $("#btn1").on("click", function() {
+                for (var i = 0; i < stars.length; i++) {
+                    tt = tt + "<tr>";
+                    for (var j = 0; j < stars[i].length; j++) {
+                        tt = tt + "<td>";
+                        tt = tt + stars[i][j];
+                        tt = tt + "</td>";
+                    }
+                    tt = tt + "</tr>";
+                }
+
+                $("#table2 > tbody").html(tt);
+            });
+        });
+
+    </script>
+
+    <style>
+        td, th {
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>순번</th>
+                <th>이름</th>
+                <th>직업</th>
+                <th>성별</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>아이유</td>
+                <td>가수</td>
+                <td>여성</td>
+            </tr>
+                              
+            <tr>
+                <td>2</td>
+                <td>폴킴</td>
+                <td>가수</td>
+                <td>남성</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>다비치</td>
+                <td>가수</td>
+                <td>여성</td>
+            </tr>
+  
+            <tr>
+                <td>4</td>
+                <td>박효신</td>
+                <td>가수</td>
+                <td>남성</td>
+            </tr>
+     
+            <tr>
+                <td>5</td>
+                <td>bts</td>
+                <td>가수</td>
+                <td>남성</td>
+            </tr>
+        </tbody> 
+    </table>
+
+    <table id="table2">
+        <thead>
+            <tr>
+               <th>순번</th>
+                <th>이름</th>
+                <th>직업</th>
+                <th>성별</th> 
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <button id="btn1">클릭 시 테이블 내용 추가</button>
+</body>
+</html>
