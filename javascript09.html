@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+
+    <script>
+        "use strict"
+        
+        // for ~ in 문
+        // object 타입 데이터를 모두 접근하기 위한 반복문
+        var car = {name : "크루즈", color : "black", size : "준중형", cc : "2000", price : 2500};
+        // console.log(car);
+
+        for (var obj in car) {
+            console.log(car[obj]);
+        }
+
+        var array = [];
+        var 불싸이버거 = {이름 : "불싸이버거", "1회제공량" : "225", 칼로리 : "481", 나트륨 : "792", 당류 : "11", 포화지방 : "4", 단백질 : "24", 세트중량 : "625", 세트칼로리 : "931"};
+
+        var 리셀버거 = {이름 : "리셀버거", "1회제공량" : "220", 칼로리 : "406", 나트륨 : "690", 당류 : "5", 포화지방 : "5", 단백질 : "32", 세트중량 : "620", 세트칼로리 : "856"};
+
+        var 화이트갈릭버거 = {이름 : "화이트갈릭버거", "1회제공량" : "247", 칼로리 : "572", 나트륨 : "911", 당류 : "2", 포화지방 : "7", 단백질 : "38", 세트중량 : "647", 세트칼로리 : "1022"};
+
+        array.push(불싸이버거);
+        array.push(리셀버거);
+        array.push(화이트갈릭버거);
+        console.log(array);
+
+        console.log("//// for ~ in ////");
+
+        for (var x in 불싸이버거) {
+            console.log(불싸이버거[x]);
+        }
+
+        for (var i = 0; i < array.length; i++) {
+            for (var x in array[i]);
+            console.log(array[i][x]);
+        }
+
+        console.log("//// 함수1번 형태 ////");
+        // 함수의 종류 
+        // 내장 함수 : 기본 언어 자체에서 제공하는 함수, 변경 x, 사용만 가능
+        // 사용자 함수 : 개발자가 사용
+
+        // return 기능 2가지
+            // 1. 데이터 돌려주기
+            // 2. 해당 함수 종료
+        
+            var 불싸이버거 = {이름 : "불싸이버거", "1회제공량" : "225", 칼로리 : "481", 나트륨 : "792", 당류 : "11", 포화지방 : "4", 단백질 : "24", 세트중량 : "625", 세트칼로리 : "931"};
+            
+            function a () {
+                for(var x in 불싸이버거){
+                    console.log(불싸이버거[x]);
+                }
+            }
+
+            a();
+            
+            console.log("//// 함수2번 형태 ////");
+
+            function b (불싸이버거) {
+                for(var x in 불싸이버거) {
+                    console.log(불싸이버거[x]);
+                }
+            }
+
+                b(불싸이버거);
+
+            console.log("//// 1 ~ 10 합 함수로 만들어 실행 ////");
+
+            
+            function add () {
+                var result = 0;
+
+                for (var i = 1; i <= 10; i++) {
+                    result = result + i
+                    console.log(result);
+                }
+            }
+
+            add();
+            
+            
+            
+            
+            console.log("//// 2 ~ 9단 출력 함수로 만들어 실행 ////");
+            
+            function gugudan() {
+                for (var i = 2; i < 10; i++) {
+                    for (var j = 1; j < 10; j++)
+                        console.log(i * j);
+                }
+            }
+
+            gugudan();
+
+
+            console.log("//// 점수 입력시 학점 출력 함수로 만들어 실행 ////");
+
+            function score() {
+                var score = 75;
+
+                if (score >= 90) {
+                    if(score > 95) {
+                        console.log("점수 : " + score + ", 등급 : A+");
+                    }
+                    else{
+                        console.log("점수 : " + score + ", 등급 : A");
+                    }
+                }
+                else if (score >= 80) {
+                    if(score > 85) {
+                        console.log("점수 : " + score + ", 등급 : B+");
+                    }
+                    else{
+                        console.log("점수 : " + score + ", 등급 : B");
+                    }
+                }
+                else if (score >= 70) {
+                    if(score > 75) {
+                        console.log("점수 : " + score + ", 등급 : C+");
+                    }
+                    else{
+                        console.log("점수 : " + score + ", 등급 : C");
+                    }
+                }
+                else if (score >= 60) {
+                    if(score > 65) {
+                        console.log("점수 : " + score + ", 등급 : D+");
+                    }
+                    else{
+                        console.log("점수 : " + score + ", 등급 : D");
+                    }
+                }
+                else {
+                    console.log("점수 : " + score + ", 등급 : F");
+                }
+
+            }
+            
+            score();
+            
+
+            console.log("//// 사용자 입력시 지정한 단수 함수로 만들어 실행 ////");
+
+            function inputGugudan(w) {
+                
+                for (var i = 1; i < 10; i++) {
+                        console.log(w * i);
+                }
+            }
+
+            var dan = prompt("출력할 구구단의 단수를 입력하세요 : ");
+                dan = Number(dan);
+            inputGugudan(dan);
+           
+            console.log("//// 매개변수 2개를 받아서 입력한 숫자 까지의 합 ////");
+
+            function add1(x,y) {
+                var z = 0;
+                for (var i = x; i <= y; i++) {
+                    z = z + i;
+                    console.log(z);
+                }
+            }
+            add1(1,5);
+            
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
